@@ -1,18 +1,14 @@
 package andima.movie.service.impl;
 
 import andima.movie.mappers.TVMapper;
-import andima.movie.models.dto.Movie.MovieDto;
 import andima.movie.models.dto.TV.TVDto;
-import andima.movie.models.entity.Movie;
 import andima.movie.models.entity.TV;
 import andima.movie.repositories.TVRepository;
 import andima.movie.service.interfaces.TVService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
