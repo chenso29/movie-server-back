@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -18,6 +19,7 @@ import javax.persistence.Table;
 
 public class TV {
     @Id
+    @NotNull
     private Long id;
     @Column
     private Double vote_average;
@@ -34,10 +36,12 @@ public class TV {
     @Column
     private String genre_ids;//
     @Column
+    @NotNull
     private String origin_country;//
     @Column
     private String original_language;
     @Column
+    @NotNull
     private String name;
     @Column
     private String poster_path;

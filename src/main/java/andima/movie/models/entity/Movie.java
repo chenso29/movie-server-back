@@ -3,6 +3,7 @@ package andima.movie.models.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -12,12 +13,12 @@ import javax.persistence.*;
 @Entity
 @Table
 @Builder
-
 public class Movie {
+    @Id
+    @NotNull
+    private Long id;
     @Column(columnDefinition = "varchar(1000)")
     private String overview;
-    @Id
-    private Long id;
     @Column
     private String release_date;
     @Column
@@ -25,11 +26,11 @@ public class Movie {
     @Column
     private String backdrop_path;
     @Column
-    private String genre_ids;//
+    private String genre_ids;
     @Column
     private String original_language;
     @Column
-    private String original_title;
+    private String original_title;//
     @Column
     private String poster_path;
     @Column
@@ -38,6 +39,7 @@ public class Movie {
     private Boolean video;
     @Column
     private Double vote_average;
+    @NotNull
     @Column
     private String title;
     @Column

@@ -11,20 +11,20 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     @Modifying
     @Query(value ="create table if not exists movie(" +
             " id bigint," +
-            " adult boolean," +
-            " backdrop_path varchar(255)," +
-            " media_type varchar(255)," +
-            " original_language varchar(255)," +
+            " adult boolean default false ," +
+            " backdrop_path varchar(255) default \"\" ," +
+            " media_type varchar(255) default \"\"," +
+            " original_language varchar(255) default en," +
             " original_title varchar(255)," +
-            " overview varchar(1000)," +
-            " popularity double precision," +
-            " poster_path varchar(255)," +
-            " release_date varchar(255)," +
-            " genre_ids varchar(255)," +
+            " overview varchar(1000) default \"\"," +
+            " popularity double precision default 0.0," +
+            " poster_path varchar(255) default \"\"," +
+            " release_date varchar(255) default \"\"," +
+            " genre_ids varchar(255) default \"\" ," +
             " title varchar(255)," +
-            " video boolean," +
-            " vote_average double precision," +
-            " vote_count BIGINT)", nativeQuery = true)
+            " video boolean default false," +
+            " vote_average double precision default 0.0," +
+            " vote_count BIGINT default 0)", nativeQuery = true)
     public void createTable();
 
     @Modifying
